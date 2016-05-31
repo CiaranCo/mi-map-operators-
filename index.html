@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <title>osmGeocoder Search Plugin for Leaflet Map</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+  <link rel="stylesheet" href="http://k4r573n.github.io/leaflet-control-osm-geocoder/Control.OSMGeocoder.css" />
+
+
+</head>
+
+<body>
+  <div id="map" style="width: 600px; height: 400px"></div>
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+  </script>
+  <script src="http://k4r573n.github.io/leaflet-control-osm-geocoder/Control.OSMGeocoder.js">
+ 
+  </script>
+<style>.leaflet-popup-content-wrapper {
+  background-color: #0c2f55;
+     color: #b1ca06;
+
+} </style>
+  <script>
+    var map = L.map('map').setView([53.3400, -6.1439], 6);
+    mapLink =
+      '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+    L.tileLayer(
+      'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; ' + mapLink + ' Contributors',
+        maxZoom: 16,
+      }).addTo(map);
+
+    var osmGeocoder = new L.Control.OSMGeocoder({
+      collapsed: false,
+      position: 'bottomright',
+      text: 'Find Operators',
+    });
+    map.addControl(osmGeocoder);   
+  </script>
+  <script>
+    var map = L.map('map').setView([53.3400, -6.1439], 6);
+    mapLink =
+      '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+    L.tileLayer(
+      'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; ' + mapLink,
+        maxZoom: 18,
+      }).addTo(map);
+    var dublin = L.marker([52.3400, -6.4439])
+      .addTo(map);
+    var rosslare = L.marker([52.3400, -6.4439])
+    var belfast = L.marker([54.6400, -5.899])
+
+    var cork = L.marker([51.7400, -8.2439]).addTo(map);
+
+    var liverpool = L.marker([53.3400, -3.1439]).addTo(map);
+    var holyhead = L.marker([53.2900, -4.6739]).addTo(map);
+    var cherbourg = L.marker([49.6550, -1.6239]).addTo(map);
+    var roscoff = L.marker([48.7250, -3.9900]).addTo(map);
+    var larne = L.marker([54.850, -5.799]).addTo(map);
+    var fishguard = L.marker([51.999, -4.999]).addTo(map);
+    var pembroke = L.marker([51.699, -4.929]).addTo(map);
+    var cairnryan = L.marker([54.969, -5.019]).addTo(map);
+  </script>
